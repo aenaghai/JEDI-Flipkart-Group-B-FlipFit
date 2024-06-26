@@ -1,17 +1,13 @@
 package com.flipkart.client;
 
-import com.flipkart.bean.FlipFitAdmin;
-import com.flipkart.bean.FlipFitGym;
 import com.flipkart.bean.GymOwner;
 import com.flipkart.business.AdminInterface;
 import com.flipkart.business.AdminService;
-import com.flipkart.business.GymOwnerService;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class AdminClient {
+public class GymFlipFitAdminMenu {
     AdminInterface adminService = new AdminService();
 
     public boolean login (String username, String password) {

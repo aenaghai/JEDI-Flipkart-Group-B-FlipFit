@@ -6,7 +6,7 @@ import com.flipkart.business.GymOwnerService;
 
 import java.util.*;
 
-public class GymOwnerClient {
+public class GymFlipFitOwnerMenu {
 
 //    GymOwnerService gymOwnerService = new GymOwnerService();
     GymOwnerInterface gymOwnerService = new GymOwnerService();

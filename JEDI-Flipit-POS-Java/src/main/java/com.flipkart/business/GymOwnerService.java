@@ -26,4 +26,9 @@ public class GymOwnerService implements GymOwnerInterface {
     public boolean removeCenter (String ownerId, String gymId){
         return false;
     }
+
+    @Override
+    public void changePassword(String username, String oldPassword, String newPassword) {
+        return;
+    }
 }
