@@ -24,26 +24,6 @@ public class GymFlipFitCustomerMenu {
         customerMainPage();
         return false;
     }
-    public void register () {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter your username: ");
-        String userName = scanner.nextLine();
-
-        System.out.print("Enter your password: ");
-        String password = scanner.nextLine();
-
-        System.out.print("Enter your email: ");
-        String email = scanner.nextLine();
-
-        System.out.print("Enter your city: ");
-        String city = scanner.nextLine();
-
-        System.out.print("Enter your card number: ");
-        String cardNumber = scanner.nextLine();
-
-        customerService.registerCustomer(userName, password, email, city, cardNumber);
-
-    }
 
     public void customerMainPage () {
         Scanner scanner = new Scanner(System.in);
@@ -54,9 +34,7 @@ public class GymFlipFitCustomerMenu {
             System.out.println("3. View all bookings in a gym on a specific date");
             System.out.println("4. Book a slot");
             System.out.println("5. Cancel a slot");
-            System.out.println("6. Register as a new customer");
-            System.out.println("7. Login as a customer");
-            System.out.println("8. Exit");
+            System.out.println("7. Exit");
             System.out.print("Enter your choice: ");
 
             int choice = scanner.nextInt();
@@ -75,7 +53,7 @@ public class GymFlipFitCustomerMenu {
                     System.out.print("Enter date (YYYY-MM-DD): ");
                     LocalDate date = LocalDate.parse(scanner.nextLine());
                     List<Slot> freeSlots = customerService.viewAllFreeSlots(gymId, date);
-                    System.out.println(freeSlots);  // Assuming Slot has a toString() method
+                    System.out.println(freeSlots);
                     break;
                 case 3:
                     System.out.print("Enter gym ID: ");
@@ -110,28 +88,6 @@ public class GymFlipFitCustomerMenu {
                     System.out.println("Cancellation status: " + (cancellationStatus ? "Success" : "Failed"));
                     break;
                 case 6:
-                    System.out.print("Enter username: ");
-                    String userName = scanner.nextLine();
-                    System.out.print("Enter password: ");
-                    String password = scanner.nextLine();
-                    System.out.print("Enter email: ");
-                    String email = scanner.nextLine();
-                    System.out.print("Enter city: ");
-                    String registrationCity = scanner.nextLine();
-                    System.out.print("Enter card number: ");
-                    String cardNumber = scanner.nextLine();
-                    boolean registrationStatus = customerService.registerCustomer(userName, password, email, registrationCity, cardNumber);
-                    System.out.println("Registration status: " + (registrationStatus ? "Success" : "Failed"));
-                    break;
-                case 7:
-                    System.out.print("Enter username: ");
-                    String loginUserName = scanner.nextLine();
-                    System.out.print("Enter password: ");
-                    String loginPassword = scanner.nextLine();
-                    boolean loginStatus = customerService.checkValidCustomer(loginUserName, loginPassword);
-                    System.out.println("Login status: " + (loginStatus ? "Success" : "Failed"));
-                    break;
-                case 8:
                     System.out.println("Exiting...");
                     scanner.close();
                     return;

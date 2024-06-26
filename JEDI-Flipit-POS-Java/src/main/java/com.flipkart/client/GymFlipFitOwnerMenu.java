@@ -8,57 +8,15 @@ import java.util.*;
 
 public class GymFlipFitOwnerMenu {
 
-//    GymOwnerService gymOwnerService = new GymOwnerService();
-    GymOwnerInterface gymOwnerService = new GymOwnerService();
-    AdminService  adminService = new AdminService();
-
-    public boolean login (String userName, String password) {
-        //verify cred
-        gymOwnerMainPage();
-        return false;
-    }
-
-    public void register () {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter your username: ");
-        String userName = scanner.nextLine();
-
-        System.out.print("Enter your password: ");
-        String password = scanner.nextLine();
-
-        System.out.print("Enter your email: ");
-        String email = scanner.nextLine();
-
-        System.out.print("Enter your city: ");
-        String city = scanner.nextLine();
-
-        System.out.print("Enter your adharCard number: ");
-        String adharNumber = scanner.nextLine();
-
-        System.out.print("Enter your gym ID number: ");
-        String gymID = scanner.nextLine();
-        List<String> gymIds = new ArrayList<>();
-        gymIds.add(gymID);
-
-
-        gymOwnerService.register(UUID.randomUUID().toString(), userName, email, password, adharNumber, gymIds);
-
-        //String userId, String userName, String email, String password, String adharCardNumber,
-        //                             List<String> gymCenterId
-
-    }
-
     public void gymOwnerMainPage() {
         Scanner scanner = new Scanner(System.in);
         GymOwnerService gymOwnerService = new GymOwnerService();
 
         while (true) {
             System.out.println("Gym Owner Service Menu:");
-            System.out.println("1. Login");
-            System.out.println("2. Register");
-            System.out.println("3. Add Gym Center");
-            System.out.println("4. Remove Gym Center");
-            System.out.println("5. Exit");
+            System.out.println("1. Add Gym Center");
+            System.out.println("2. Remove Gym Center");
+            System.out.println("3. Exit");
             System.out.print("Enter your choice: ");
 
             int choice = scanner.nextInt();
@@ -66,35 +24,6 @@ public class GymFlipFitOwnerMenu {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter username: ");
-                    String userName = scanner.nextLine();
-                    System.out.print("Enter password: ");
-                    String password = scanner.nextLine();
-                    boolean loginStatus = gymOwnerService.login(userName, password);
-                    System.out.println("Login status: " + (loginStatus ? "Success" : "Failed"));
-                    break;
-                case 2:
-                    String userId = UUID.randomUUID().toString();
-                    System.out.print("Enter username: ");
-                    String registerUserName = scanner.nextLine();
-                    System.out.print("Enter email: ");
-                    String email = scanner.nextLine();
-                    System.out.print("Enter password: ");
-                    String registerPassword = scanner.nextLine();
-                    System.out.print("Enter Aadhar card number: ");
-                    String adharCardNumber = scanner.nextLine();
-                    List<String> gymCenterId = new ArrayList<>();
-                    System.out.print("Enter number of gym centers: ");
-                    int numCenters = scanner.nextInt();
-                    scanner.nextLine();
-                    for (int i = 0; i < numCenters; i++) {
-                        System.out.print("Enter gym center ID " + (i + 1) + ": ");
-                        gymCenterId.add(scanner.nextLine());
-                    }
-                    boolean registerStatus = gymOwnerService.register(userId, registerUserName, email, registerPassword, adharCardNumber, gymCenterId);
-                    System.out.println("Registration status: " + (registerStatus ? "Success" : "Failed"));
-                    break;
-                case 3:
                     String ownerId = UUID.randomUUID().toString();
                     System.out.print("Enter gym ID: ");
                     String gymId = scanner.nextLine();
@@ -108,7 +37,7 @@ public class GymFlipFitOwnerMenu {
                     boolean addCenterStatus = gymOwnerService.addCenter(ownerId, gymId, city, capacity, cost);
                     System.out.println("Add center status: " + (addCenterStatus ? "Success" : "Failed"));
                     break;
-                case 4:
+                case 2:
                     System.out.print("Enter owner ID: ");
                     String removeOwnerId = scanner.nextLine();
                     System.out.print("Enter gym ID: ");
@@ -116,7 +45,7 @@ public class GymFlipFitOwnerMenu {
                     boolean removeCenterStatus = gymOwnerService.removeCenter(removeOwnerId, removeGymId);
                     System.out.println("Remove center status: " + (removeCenterStatus ? "Success" : "Failed"));
                     break;
-                case 5:
+                case 3:
                     System.out.println("Exiting...");
                     scanner.close();
                     return;
