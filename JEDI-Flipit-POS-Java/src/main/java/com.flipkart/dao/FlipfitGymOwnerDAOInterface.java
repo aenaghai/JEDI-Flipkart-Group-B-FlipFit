@@ -2,7 +2,7 @@ package com.flipkart.dao;
 
 import java.util.List;
 
-public interface GymOwnerDAOInterface {
+public interface FlipfitGymOwnerDAOInterface {
     public boolean login (String userName, String password);
     public boolean register (String userId, String userName, String email, String password, String adharCardNumber,
                              List<String> gymCenterId);
