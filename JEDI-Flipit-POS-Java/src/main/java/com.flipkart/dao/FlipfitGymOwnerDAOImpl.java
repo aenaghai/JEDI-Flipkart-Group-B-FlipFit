@@ -2,7 +2,7 @@ package com.flipkart.dao;
 
 import java.util.List;
 
-public class GymOwnerDAOImpl implements GymOwnerDAOInterface{
+public class FlipfitGymOwnerDAOImpl implements FlipfitGymOwnerDAOInterface {
     @Override
     public boolean login(String userName, String password) {
         return false;

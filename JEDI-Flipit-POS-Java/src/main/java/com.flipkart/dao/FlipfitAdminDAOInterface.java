@@ -4,7 +4,7 @@ import com.flipkart.bean.GymOwner;
 
 import java.util.List;
 
-public interface AdminDAOInterface {
+public interface FlipfitAdminDAOInterface {
     public boolean approveGymOwner (String gymOwnerId, boolean status);
     public List<GymOwner> viewNonApprovedSlots();
     public boolean changePassword(String userName, String oldPassword, String newPassword);

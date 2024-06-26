@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
-public class CustomerDAOImpl implements CustomerDAOInterface{
+public class FlipfitCustomerDAOImpl implements FlipfitCustomerDAOInterface {
     @Override
     public List<FlipFitGym> viewAllGymCenters(String city) {
         return null;

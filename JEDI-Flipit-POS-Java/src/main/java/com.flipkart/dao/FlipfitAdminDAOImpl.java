@@ -4,7 +4,7 @@ import com.flipkart.bean.GymOwner;
 
 import java.util.List;
 
-public class AdminDAOImpl implements AdminDAOInterface{
+public class FlipfitAdminDAOImpl implements FlipfitAdminDAOInterface {
     @Override
     public boolean approveGymOwner(String gymOwnerId, boolean status) {
         return false;

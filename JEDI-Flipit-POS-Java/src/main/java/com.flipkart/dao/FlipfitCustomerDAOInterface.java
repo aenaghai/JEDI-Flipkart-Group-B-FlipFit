@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
-public interface CustomerDAOInterface {
+public interface FlipfitCustomerDAOInterface {
     public List<FlipFitGym> viewAllGymCenters(String city);
     public List<Slot> viewAllFreeSlots (String gymId, LocalDate date);
     public List<Booking> viewAllBookings (String gymId, LocalDate date);
