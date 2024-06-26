@@ -18,6 +18,35 @@ public class GymOwnerClient {
         return false;
     }
 
+    public void register () {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your username: ");
+        String userName = scanner.nextLine();
+
+        System.out.print("Enter your password: ");
+        String password = scanner.nextLine();
+
+        System.out.print("Enter your email: ");
+        String email = scanner.nextLine();
+
+        System.out.print("Enter your city: ");
+        String city = scanner.nextLine();
+
+        System.out.print("Enter your adharCard number: ");
+        String adharNumber = scanner.nextLine();
+
+        System.out.print("Enter your gym ID number: ");
+        String gymID = scanner.nextLine();
+        List<String> gymIds = new ArrayList<>();
+        gymIds.add(gymID);
+
+
+        gymOwnerService.register(UUID.randomUUID().toString(), userName, email, password, adharNumber, gymIds);
+
+        //String userId, String userName, String email, String password, String adharCardNumber,
+        //                             List<String> gymCenterId
+
+    }
 
     public void gymOwnerMainPage() {
         Scanner scanner = new Scanner(System.in);
