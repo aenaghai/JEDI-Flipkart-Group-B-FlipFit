@@ -1,10 +1,11 @@
 package com.flipkart.business;
 
 import com.flipkart.bean.FlipFitGym;
+import com.flipkart.business.GymOwnerInterface;
 
 import java.util.List;
 
-public class GymOwnerService {
+public class GymOwnerService implements GymOwnerInterface {
 
     public boolean login (String userName, String password) {
         //verify the user
