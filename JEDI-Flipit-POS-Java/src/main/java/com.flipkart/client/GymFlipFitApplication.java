@@ -25,33 +25,37 @@ public class GymFlipFitApplication {
         System.out.println("Welcome to FlipFit App!!\n");
         System.out.println("Choose a option : \n1: Enter to login\n2:Enter to register as Customer\n3:Enter to register as Gym " +
                 "Owner\n4: Change Password\n5: Exit");
-        Scanner scanner = new Scanner(System.in);
-        int choice = scanner.nextInt();
+        try{
+            Scanner scanner = new Scanner(System.in);
+            int choice = scanner.nextInt();
 
-        switch(choice) {
-            case 1:
-                login();
-                break;
-            case 2:
-                registerAsCustomer();
-                break;
-            case 3:
-                registerGymOwner();
-                break;
-            case 4:
-                changePassword();
-                break;
-            case 5:
-                System.out.println("Exiting FlipFit App. Goodbye!");
-                System.exit(0);
-                break;
-            default:
-                System.out.println("Please choose a valid option");
+            switch(choice) {
+                case 1:
+                    login();
+                    break;
+                case 2:
+                    registerAsCustomer();
+                    break;
+                case 3:
+                    registerGymOwner();
+                    break;
+                case 4:
+                    changePassword();
+                    break;
+                case 5:
+                    System.out.println("Exiting FlipFit App. Goodbye!");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Please choose a valid option");
+            }
+        } catch(Exception e){
+        System.out.println("You have entered an invalid option or there is some internal server error!");
         }
     }
 
     private static void login() {
-        System.out.println("Please Choose : \n11: Enter 1 to login as Admin\n2: Enter 2 to login as Customer\n3: " +
+        System.out.println("Please Choose : \n1: Enter 1 to login as Admin\n2: Enter 2 to login as Customer\n3: " +
                 "Enter 3 to login as GymOwner");
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
@@ -152,7 +156,7 @@ public class GymFlipFitApplication {
         String username = scanner.nextLine();
         System.out.print("Enter old password: ");
         String oldPassword = scanner.nextLine();
-        System.out.print("Enter new password");
+        System.out.print("Enter new password: ");
         String newPassword = scanner.nextLine();
 
         System.out.println("\nEnter your role:");
@@ -160,24 +164,34 @@ public class GymFlipFitApplication {
         System.out.println("2: GymOwner");
         System.out.println("3: Admin");
 
-        int roleChoice = scanner.nextInt();
+        try {
+            int roleChoice = scanner.nextInt();
 
-        switch(roleChoice) {
-            case 1:
-                System.out.println("You selected Customer role.");
-                customerClient.changePassword(username, oldPassword, newPassword);
-                break;
-            case 2:
-                System.out.println("You selected GymOwner role.");
-                // Call method or perform actions specific to GymOwner role
-                gymOwnerClient.changePassword(username, oldPassword, newPassword);
-                break;
-            case 3:
-                System.out.println("You selected Admin role.");
-                adminClient.changePassword(username, oldPassword, newPassword);
-                break;
-            default:
-                System.out.println("Invalid role choice. Please choose 1, 2, or 3.");
+            switch(roleChoice) {
+                case 1:
+                    System.out.println("You selected Customer role.");
+                    if(customerClient.changePassword(username, oldPassword, newPassword)){
+                        System.out.println("Password changed successfully!");
+                    }
+                    break;
+                case 2:
+                    System.out.println("You selected GymOwner role.");
+                    if(gymOwnerClient.changePassword(username, oldPassword, newPassword)){
+                        System.out.println("Password changed successfully!");
+                    }
+                    break;
+                case 3:
+                    System.out.println("You selected Admin role.");
+                    if(adminClient.changePassword(username, oldPassword, newPassword)){
+                        System.out.println("Password changed successfully!");
+                    }
+                    break;
+                default:
+                    System.out.println("Invalid role choice. Please choose 1, 2, or 3.");
+            }
+        }
+        catch (Exception e) {
+            System.out.println("Please chosen a valid option");
         }
     }
 }

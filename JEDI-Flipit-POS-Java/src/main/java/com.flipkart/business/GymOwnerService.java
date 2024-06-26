@@ -28,7 +28,7 @@ public class GymOwnerService implements GymOwnerInterface {
     }
 
     @Override
-    public void changePassword(String username, String oldPassword, String newPassword) {
-        return;
+    public boolean changePassword(String username, String oldPassword, String newPassword) {
+        return true;
     }
 }

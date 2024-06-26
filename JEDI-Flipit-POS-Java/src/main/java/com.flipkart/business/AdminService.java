@@ -17,7 +17,7 @@ public class AdminService implements AdminInterface {
 
     @Override
     public boolean changePassword(String userName, String oldPassword, String newPassword) {
-        return false;
+        return true;
     }
 
     @Override
