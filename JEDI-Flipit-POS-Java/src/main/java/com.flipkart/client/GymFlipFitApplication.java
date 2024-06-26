@@ -17,6 +17,10 @@ public class GymFlipFitApplication {
     private static CustomerInterface customerClient = new CustomerService();
     private static GymOwnerInterface gymOwnerClient = new GymOwnerService();
 
+    private static GymFlipFitCustomerMenu gymFlipFitCustomerMenu = new GymFlipFitCustomerMenu();
+    private static GymFlipFitAdminMenu gymFlipFitAdminMenu = new GymFlipFitAdminMenu();
+    private static GymFlipFitOwnerMenu gymFlipFitOwnerMenu = new GymFlipFitOwnerMenu();
+
     private static void homePage() {
         System.out.println("Welcome to FlipFit App!!\n");
         System.out.println("Choose a option : \n1: Enter to login\n2:Enter to register as Customer\n3:Enter to register as Gym " +
@@ -59,6 +63,7 @@ public class GymFlipFitApplication {
             System.out.println("Enter your Passkey");
             String password = scanner.next();
             adminClient.login(userName, password);
+            gymFlipFitAdminMenu.adminMainPage();
         }
         else if (choice == 2) {
             System.out.println("Enter your UserName");
@@ -66,6 +71,7 @@ public class GymFlipFitApplication {
             System.out.println("Enter your Passkey");
             String password = scanner.next();
             customerClient.login(userName, password);
+            gymFlipFitCustomerMenu.customerMainPage();
         }
         else if (choice == 3) {
             System.out.println("Enter your UserName");
@@ -73,6 +79,7 @@ public class GymFlipFitApplication {
             System.out.println("Enter your Passkey");
             String password = scanner.next();
             gymOwnerClient.login(userName, password);
+            gymFlipFitOwnerMenu.gymOwnerMainPage();
         }
         else {
             System.out.println("Please choose a valid option");

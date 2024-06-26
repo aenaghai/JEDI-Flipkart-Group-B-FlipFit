@@ -28,7 +28,7 @@ public class GymFlipFitAdminMenu {
         return false;
     }
 
-    private void adminMainPage() {
+    public void adminMainPage() {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
