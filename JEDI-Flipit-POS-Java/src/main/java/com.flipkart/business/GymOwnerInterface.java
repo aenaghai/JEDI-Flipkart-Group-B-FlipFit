@@ -8,4 +8,6 @@ public interface GymOwnerInterface {
                              List<String> gymCenterId);
     public boolean addCenter (String ownerId, String gymId, String city, int capacity, int cost);
     public boolean removeCenter (String ownerId, String gymId);
+
+    public void changePassword(String username, String oldPassword, String newPassword);
 }

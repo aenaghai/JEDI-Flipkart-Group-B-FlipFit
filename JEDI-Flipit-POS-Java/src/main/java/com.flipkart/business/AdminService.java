@@ -14,4 +14,14 @@ public class AdminService implements AdminInterface {
         //method to call all pending ownerId
         return null;
     }
+
+    @Override
+    public boolean changePassword(String oldPassword, String newPassword) {
+        return false;
+    }
+
+    @Override
+    public void login(String userName, String password) {
+        return;
+    }
 }

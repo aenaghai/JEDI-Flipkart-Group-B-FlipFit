@@ -46,4 +46,14 @@ public class CustomerService implements CustomerInterface{
 
         return false;
     }
+
+    @Override
+    public boolean changePassword(String userName, String password, String newPassword) {
+        return false;
+    }
+
+    @Override
+    public void login(String userName, String password) {
+        return;
+    }
 }
