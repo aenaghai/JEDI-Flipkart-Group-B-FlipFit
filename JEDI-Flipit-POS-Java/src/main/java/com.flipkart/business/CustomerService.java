@@ -49,7 +49,7 @@ public class CustomerService implements CustomerInterface{
 
     @Override
     public boolean changePassword(String userName, String password, String newPassword) {
-        return false;
+        return true;
     }
 
     @Override
