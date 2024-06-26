@@ -1,6 +1,6 @@
 package com.flipkart.business;
 
-public class BookingService {
+public class BookingService implements BookingInterface{
     public boolean addBooking (String userId, String slotId, String gymId) {
         //check if booking is valid
         //add it to the booking table w bookingId and userId
