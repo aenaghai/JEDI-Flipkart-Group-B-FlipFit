@@ -1,13 +1,15 @@
 package com.flipkart.client;
 
 import com.flipkart.business.AdminService;
+import com.flipkart.business.GymOwnerInterface;
 import com.flipkart.business.GymOwnerService;
 
 import java.util.*;
 
 public class GymOwnerClient {
 
-    GymOwnerService gymOwnerService = new GymOwnerService();
+//    GymOwnerService gymOwnerService = new GymOwnerService();
+    GymOwnerInterface gymOwnerService = new GymOwnerService();
     AdminService  adminService = new AdminService();
 
     public boolean login (String userName, String password) {

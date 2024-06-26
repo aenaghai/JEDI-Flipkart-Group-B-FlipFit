@@ -3,12 +3,13 @@ package com.flipkart.business;
 import com.flipkart.bean.Booking;
 import com.flipkart.bean.FlipFitGym;
 import com.flipkart.bean.Slot;
+import com.flipkart.business.CustomerInterface;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
-public class CustomerService {
+public class CustomerService implements CustomerInterface{
 
     public List<FlipFitGym> viewAllGymCenters(String city) {
         return null;
