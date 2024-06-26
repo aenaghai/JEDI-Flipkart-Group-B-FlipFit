@@ -15,7 +15,7 @@ public class GymOwnerService implements GymOwnerInterface {
     public boolean register (String userId, String userName, String email, String password, String adharCardNumber,
                              List<String> gymCenterId) {
         //add this user to DB
-        return false;
+        return true;
     }
 
     public boolean addCenter (String ownerId, String gymId, String city, int capacity, int cost){

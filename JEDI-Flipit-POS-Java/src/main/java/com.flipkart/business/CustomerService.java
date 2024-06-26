@@ -38,7 +38,7 @@ public class CustomerService implements CustomerInterface{
         //verify details, check if the user is not already registered
         //store the customer
 
-        return false;
+        return true;
     }
 
     public boolean checkValidCustomer (String userName, String password) {

@@ -47,7 +47,7 @@ public class GymFlipFitApplication {
     }
 
     private static void login() {
-        System.out.println("Please Choose : \n1: Enter 1 to login as Admin\n2: Enter 2 to login as Customer\n3: " +
+        System.out.println("Please Choose : \n11: Enter 1 to login as Admin\n2: Enter 2 to login as Customer\n3: " +
                 "Enter 3 to login as GymOwner");
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
